@@ -1,25 +1,40 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import { FixedSizeList as List } from "react-window";
 
-function App() {
+import PostsContainer from './components/PostsContainer';
+import PostItem from './components/PostItem';
+import useFetchPost from './hooks/useFetchPost';
+import { FetchPostHook } from './hooks/useFetchPost'
+
+const App: React.FC = () => {
+  const [lastId, setLastId] = useState<number | null>(null);
+
+  const { loading, error, posts, hasMore }: FetchPostHook = useFetchPost(lastId);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <PostsContainer>
+      <List
+        className="List"
+        height={window.innerHeight}
+        width={600}
+        itemCount={posts.length}
+        itemSize={200}
+        itemData={posts}
+      >
+        {({ index, style }) => (
+          <div style={style}>
+            <PostItem
+              postTitle={posts[index].title}
+              postExcerpt={posts[index].excerpt}
+              topics={posts[index].topics}
+              likeCount={posts[index].likeCount}
+              commentCount={posts[index].commentCount}
+              key={index}
+            />
+          </div>
+        )}
+      </List>
+    </PostsContainer>
   );
 }
 
