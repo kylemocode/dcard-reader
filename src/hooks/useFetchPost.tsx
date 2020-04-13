@@ -21,17 +21,20 @@ export default function useFetchPost(lastId?: number | null) {
 		setError(false);
 
 		if (lastId) {
-			axios.get(DCARD_BASE_URL + '&limit=' + API_POST_LIMIT + '&before=' + lastId)
-				.then((result) => {
-					// @ts-ignore
-					setPosts(prevPosts => {
-						return [...prevPosts, ...result.data]
-					});
-					setLoading(false);
-				})
-				.catch(() => {
-					setError(true);
-				})
+			setTimeout(() => {
+				axios.get(DCARD_BASE_URL + '&limit=' + API_POST_LIMIT + '&before=' + lastId)
+					.then((result) => {
+						// @ts-ignore
+						setPosts(prevPosts => {
+							return [...prevPosts, ...result.data]
+						});
+						setHasMore(result.data.length > 0)
+						setLoading(false);
+					})
+					.catch(() => {
+						setError(true);
+					})
+			}, 700)
 		} else {
 			axios.get(DCARD_BASE_URL + '&limit=' + API_POST_LIMIT)
 				.then((result) => {

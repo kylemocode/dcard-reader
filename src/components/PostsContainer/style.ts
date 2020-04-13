@@ -9,7 +9,7 @@ export const S = {
 		justify-content: center;
 	`,
 	InnerContainer: styled.div`
-		width: 60%;
+		width: 75%;
 		height: 100%;
 		background-color: white;
 		display: flex;
@@ -19,16 +19,10 @@ export const S = {
 		@media ${device.tablet} { 
 			width: 80%;
 		}
-		
-		@media ${device.mobileL} {
-			width: 95%;
+		@media ${device.mobileXL} {
+			width: 98%;
 		}
-
 		@media ${device.mobileM} {
-			width: 100%;
-		}
-
-		@media ${device.mobileS} {
 			width: 100%;
 		}
 	`

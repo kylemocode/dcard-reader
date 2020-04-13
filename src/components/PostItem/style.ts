@@ -3,15 +3,16 @@ import { device } from '../../utils/media';
 
 export const S = {
 	ItemContainer: styled.div`
-		width: 85%;
-		min-height: 150px;
+		width: 100%;
+		min-height: 200px;
+		box-sizing: border-box;
 		padding: 5px 10px;
 		border-bottom: solid 1px rgba(0,0,0,0.2);
 		cursor: pointer;
 		overflow: hidden;
 
-		@media ${device.mobileXL} {
-			min-height: 230px;
+		@media ${device.tablet} {
+			min-height: 250px;
 		}
 	`,
 	PostTitle: styled.p`
@@ -27,7 +28,7 @@ export const S = {
 		width: 100%;
 		display: flex;
 		flex-wrap: wrap;
-
+		min-height: 20px;
 	`
 
 }
