@@ -22,6 +22,7 @@ export const S = {
 	PostExcerpt: styled.p`
 		font-size: 13px;
 		color: rgba(0,0,0,0.6);
+		min-height: 36px;
 	`,
 
 	LabelsContainer: styled.div`

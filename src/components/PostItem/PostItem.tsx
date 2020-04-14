@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+
 import { S } from './style';
 import TopicLabel from '../TopicLabel';
 import ResponseInfo from '../ResponseInfo';
@@ -9,17 +10,10 @@ interface props {
 	likeCount: number;
 	commentCount: number;
 	topics: string[];
+	onClick: any;
 }
 
-const defaultProps: props = {
-	postTitle: '',
-	postExcerpt: '',
-	likeCount: 0,
-	commentCount: 0,
-	topics: []
-}
-
-const PostItem: React.FC<props> = ({ postTitle, postExcerpt, topics, likeCount, commentCount }) => {
+const PostItem: React.FC<props> = ({ postTitle, postExcerpt, topics, likeCount, commentCount, onClick }) => {
 
 	const trimExcerpt = (excerpt: string | undefined) => {
 		if (excerpt) {
@@ -32,12 +26,12 @@ const PostItem: React.FC<props> = ({ postTitle, postExcerpt, topics, likeCount, 
 	}
 
 	return (
-		<S.ItemContainer>
+		<S.ItemContainer onClick={onClick}>
 			<S.PostTitle>{postTitle}</S.PostTitle>
 			<S.PostExcerpt>{trimExcerpt(postExcerpt)}</S.PostExcerpt>
 			<S.LabelsContainer>
-				{topics && topics.map((topic) => {
-					return <TopicLabel>{topic}</TopicLabel>
+				{topics && topics.map((topic, index) => {
+					return <TopicLabel key={index}>{topic}</TopicLabel>
 				})}
 			</S.LabelsContainer>
 			<ResponseInfo
@@ -47,7 +41,5 @@ const PostItem: React.FC<props> = ({ postTitle, postExcerpt, topics, likeCount, 
 		</S.ItemContainer>
 	)
 }
-
-PostItem.defaultProps = defaultProps;
 
 export default PostItem;

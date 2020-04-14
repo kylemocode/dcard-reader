@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-import { DCARD_BASE_URL, API_POST_LIMIT } from '../constant/api';
+import { DCARD_POPULAR_POSTS_BASE_URL, API_POST_LIMIT } from '../constant/api';
 
 export interface FetchPostHook {
 	loading: boolean;
@@ -22,7 +22,7 @@ export default function useFetchPost(lastId?: number | null) {
 
 		if (lastId) {
 			setTimeout(() => {
-				axios.get(DCARD_BASE_URL + '&limit=' + API_POST_LIMIT + '&before=' + lastId)
+				axios.get(DCARD_POPULAR_POSTS_BASE_URL + '&limit=' + API_POST_LIMIT + '&before=' + lastId)
 					.then((result) => {
 						// @ts-ignore
 						setPosts(prevPosts => {
@@ -36,7 +36,8 @@ export default function useFetchPost(lastId?: number | null) {
 					})
 			}, 700)
 		} else {
-			axios.get(DCARD_BASE_URL + '&limit=' + API_POST_LIMIT)
+			// 第一次進入頁面
+			axios.get(DCARD_POPULAR_POSTS_BASE_URL + '&limit=' + API_POST_LIMIT)
 				.then((result) => {
 					setPosts(result.data);
 					setLoading(false);
@@ -45,7 +46,6 @@ export default function useFetchPost(lastId?: number | null) {
 					setError(true);
 				})
 		}
-
 	}, [lastId])
 
 	return { loading, error, posts, hasMore };
