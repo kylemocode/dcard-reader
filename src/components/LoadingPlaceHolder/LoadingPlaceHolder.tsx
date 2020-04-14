@@ -1,4 +1,5 @@
 import React from 'react'
+
 import { S } from './style';
 
 const LoadingPlaceHolder: React.FC = () => {

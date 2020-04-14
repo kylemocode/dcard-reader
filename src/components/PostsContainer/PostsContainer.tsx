@@ -1,4 +1,5 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from 'react';
+
 import { S } from './style';
 
 interface props {

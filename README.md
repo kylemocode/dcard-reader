@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use TypeScript template.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and TypeScript template.
 
 # Dcard Reader
 2020 Dcard Frontend Challenge
@@ -21,28 +21,26 @@ Advanced Features:
 - react-window
 - axios
 
-## 檔案結構
+## source code 檔案結構
 ```
-app
-├── config
-│   └── routes.js
-├── screens
-│   └── App
-│       ├── screens
-│       │   ├── Admin
-│       │   │   ├── screens
-│       │   │   │   ├── Reports
-│       │   │   │   │   └── index.js
-│       │   │   │   └── Users
-│       │   │   │       └── index.js
-│       │   │   └── index.js
-│       │   └── Course
-│       │       ├── screens
-│       │       │   └── Assignments
-│       │       │       └── index.js
-│       │       └── index.js
-│       └── index.js
-└── index.js
+src
+├── constant
+│   └── api.ts
+├── hook
+│   └── useFetchPost.tsx
+├── utils
+│   └── media.ts
+├── components
+│   └── LoadingPlaceHolder
+│   └── PostItem
+│   └── PostModal
+│   └── PostContainer
+│   └── ResponseInfo
+│   └── TopicLabel
+└── App.tsx
+└── index.css
+└── index.tsx
+└── serviceWorker.ts
 ```
 
 ## 啟動步驟
