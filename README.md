@@ -21,7 +21,7 @@ Advanced Features:
 - react-window
 - axios
 
-## source code 檔案結構
+## Source Code 檔案結構
 ```
 src
 ├── constant
@@ -52,5 +52,7 @@ src
 ### `npm start`
 
 啟動 Dcard Reader on localhost:3000
+
+Netlify URL: [https://dcard-reader.netlify.com/](https://dcard-reader.netlify.com/)
 
 ![](https://i.imgur.com/5v2PPur.png)
