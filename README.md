@@ -1,44 +1,58 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and use TypeScript template.
 
-## Available Scripts
+# Dcard Reader
+2020 Dcard Frontend Challenge
 
-In the project directory, you can run:
+Basic Features:
+- 實作文章列表
+	- 串接 文章列表 API 回傳的資料
+	- 列表內的項目至少需顯示文章的：標題 title、摘要 excerpt
+	- 列表在滾到頁面底部時要自動載入更多文章（需避免重複發送 API 請求） 
 
-### `yarn start`
+Advanced Features:
+- Virtualized List
+- Modal 顯示單篇文章
+- RWD
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 使用技術
+- React.js with TypeScript (hooks)
+- styled-components
+- react-modal
+- react-window
+- axios
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## 檔案結構
+```
+app
+├── config
+│   └── routes.js
+├── screens
+│   └── App
+│       ├── screens
+│       │   ├── Admin
+│       │   │   ├── screens
+│       │   │   │   ├── Reports
+│       │   │   │   │   └── index.js
+│       │   │   │   └── Users
+│       │   │   │       └── index.js
+│       │   │   └── index.js
+│       │   └── Course
+│       │       ├── screens
+│       │       │   └── Assignments
+│       │       │       └── index.js
+│       │       └── index.js
+│       └── index.js
+└── index.js
+```
 
-### `yarn test`
+## 啟動步驟
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### `npm install`
 
-### `yarn build`
+從 package.json 安裝所需的 dependencies
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### `npm start`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+啟動 Dcard Reader on localhost:3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![](https://i.imgur.com/5v2PPur.png)

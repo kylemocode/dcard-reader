@@ -14,7 +14,7 @@ interface props {
 }
 
 const PostModal: React.FC<props> = ({ isOpen, onRequestClose, postId }) => {
-	const [postData, setPostData] = useState({ title: '', content: '' });
+	const [postData, setPostData] = useState({ title: '', content: '', forumName: '' });
 	const [isLoading, setIsLoading] = useState(false);
 
 	useEffect(() => {
@@ -25,7 +25,7 @@ const PostModal: React.FC<props> = ({ isOpen, onRequestClose, postId }) => {
 		if (postId) {
 			setIsLoading(true)
 			axios.get(DCARD_SINGLE_POST_BASE_URL + postId)
-				.then((res) => setPostData({ title: res.data.title, content: res.data.content }))
+				.then((res) => setPostData({ title: res.data.title, content: res.data.content, forumName: res.data.forumName }))
 				.then(() => setIsLoading(false))
 		}
 	}, [postId])
@@ -51,6 +51,7 @@ const PostModal: React.FC<props> = ({ isOpen, onRequestClose, postId }) => {
 			{isLoading ? <LoadingPlaceHolder /> :
 				<>
 					<S.PostTitle>{postData.title}</S.PostTitle>
+					<S.PostForumName>{postData.forumName}</S.PostForumName>
 					<S.PostContent>{postData.content}</S.PostContent>
 					<br></br>
 					<S.PostButton onClick={onRequestClose}>退出</S.PostButton>

@@ -18,5 +18,10 @@ export const S = {
 		:active {
 			outline: none;
 		}
+	`,
+	PostForumName: styled.p`
+		color: #9ecde7;
+		font-size: 14px;
+		font-weight: bold;
 	`
 }
