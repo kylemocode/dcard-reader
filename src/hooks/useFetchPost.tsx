@@ -28,7 +28,7 @@ export default function useFetchPost(lastId?: number | null) {
 						setPosts(prevPosts => {
 							return [...prevPosts, ...result.data]
 						});
-						setHasMore(result.data.length > 0)
+						setHasMore(result.data.length > 0);
 						setLoading(false);
 					})
 					.catch(() => {
@@ -40,6 +40,7 @@ export default function useFetchPost(lastId?: number | null) {
 			axios.get(DCARD_POPULAR_POSTS_BASE_URL + '&limit=' + API_POST_LIMIT)
 				.then((result) => {
 					setPosts(result.data);
+					setHasMore(result.data.length > 0);
 					setLoading(false);
 				})
 				.catch(() => {
