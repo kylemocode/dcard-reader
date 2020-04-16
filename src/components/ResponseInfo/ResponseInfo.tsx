@@ -18,4 +18,4 @@ const ResponseInfo: React.FC<props> = ({ likeCount, commentCount }) => {
 	)
 }
 
-export default React.memo(ResponseInfo);
+export default ResponseInfo;

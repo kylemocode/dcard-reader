@@ -14,4 +14,4 @@ const TopicLabel: React.FC<props> = ({ children }) => {
 	)
 }
 
-export default React.memo(TopicLabel);
+export default TopicLabel;

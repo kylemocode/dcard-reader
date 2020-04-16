@@ -12,4 +12,4 @@ const LoadingPlaceHolder: React.FC = () => {
 	)
 }
 
-export default LoadingPlaceHolder;
+export default React.memo(LoadingPlaceHolder);
