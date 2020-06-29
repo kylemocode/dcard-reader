@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
   return (
     <PostsContainer>
-      <List
+      {posts.length ? <><List
         className="List"
         height={window.innerHeight}
         width={listWidth}
@@ -100,7 +100,16 @@ const App: React.FC = () => {
           }
         }}
       </List>
-      <PostModal isOpen={isModalOpen} onRequestClose={handleModalClose} postId={modalPostId} />
+      <PostModal isOpen={isModalOpen} onRequestClose={handleModalClose} postId={modalPostId} /></> : (
+        <div style={{marginTop: '40px'}}>
+          <LoadingPlaceHolder />
+          <LoadingPlaceHolder />
+          <LoadingPlaceHolder />
+          <LoadingPlaceHolder />
+          <LoadingPlaceHolder />
+        </div>
+      )}
+      
     </PostsContainer>
   );
 }

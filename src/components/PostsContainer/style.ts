@@ -5,6 +5,7 @@ import { device } from '../../utils/media';
 export const S = {
 	FullContainer: styled.div`
 		width: 100vw;
+		height: 100vh;
 		background-color: #00324e;
 		display: flex;
 		justify-content: center;
