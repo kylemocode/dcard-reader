@@ -5,6 +5,7 @@ A webapp that imitate Dcard app.
 Using Virtualized List and lazy data-loading to enhance app performance.
 
 ![image](./assets/dcard-reader.gif)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader?ref=badge_shield)
 
 Basic Features:
 - 實作文章列表
@@ -61,3 +62,6 @@ src
 Netlify URL: [https://dcard-reader.netlify.com/](https://dcard-reader.netlify.com/)
 
 ![](https://i.imgur.com/5v2PPur.png)
+
+## License
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader?ref=badge_large)
