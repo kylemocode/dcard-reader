@@ -26,7 +26,7 @@ const PostItem: React.FC<props> = ({ postTitle, postExcerpt, topics, likeCount, 
 	}
 
 	return (
-		<S.ItemContainer onClick={onClick}>
+		<S.ItemContainer onClick={onClick} data-testid="postItem" >
 			<S.PostTitle>{postTitle}</S.PostTitle>
 			<S.PostExcerpt>{trimExcerpt(postExcerpt)}</S.PostExcerpt>
 			<S.LabelsContainer>

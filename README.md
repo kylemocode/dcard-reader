@@ -1,7 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and TypeScript template.
 
 # Dcard Reader
-2020 Dcard Frontend Challenge
+A webapp that imitate Dcard app. 
+Using Virtualized List and lazy data-loading to enhance app performance.
+
+![image](./assets/dcard-reader.gif)
 
 Basic Features:
 - 實作文章列表
@@ -21,9 +24,11 @@ Advanced Features:
 - react-window
 - axios
 
-## Source Code 檔案結構
+## Source Code File Structure
 ```
 src
+├── api
+│   └── proxy.ts
 ├── constant
 │   └── api.ts
 ├── hook
