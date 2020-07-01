@@ -3,26 +3,37 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 # Dcard Reader
 A webapp that imitate Dcard app. 
 Using Virtualized List and lazy data-loading to enhance app performance.
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader?ref=badge_shield)
 
 ![image](./assets/dcard-reader.gif)
 
-Basic Features:
-- 實作文章列表
-	- 串接 文章列表 API 回傳的資料
-	- 列表內的項目至少需顯示文章的：標題 title、摘要 excerpt
-	- 列表在滾到頁面底部時要自動載入更多文章（需避免重複發送 API 請求） 
+## Installation
 
-Advanced Features:
-- Virtualized List
-- Modal 顯示單篇文章
-- RWD
+```shell
+$ git clone https://github.com/kylemocode/dcard-reader.git
+$ cd dcard-reader
+$ npm install && npm start (or using yarn instead)
+```
 
-## 使用技術
-- React.js with TypeScript (hooks)
-- styled-components
-- react-modal
-- react-window
-- axios
+## Features:
+  - [X] Virtualized List
+  - [X] Infinite Scroll
+  - [X] Lazy Load
+  - [X] Performance
+  - [X] Proxy Server
+  
+### Virtualized List
+Use `react-window` to achieve virtualized list which is a react components for efficiently rendering large lists and tabular data.As the Chrome Performance Monitor, It took less than **4.2MB JS heap size, 350 DOM** nodes on initial renderer, and of course, it's responsive. 
+
+### Infinite Scroll && Lazy Load
+Use `IntersectionObserver` API to achieve infinite scroll and only load more data while scrolling to current bottom boundary.
+
+### Performance
+In addition to lazy-loading data, dcard-reader also use react core functions to enhance app performance, such as `React.memo`、`useCallback`、`useMemo`...etc.
+
+### Proxy server
+To solve **CORS** problem in dcard 3rd-party-API, I choose to build my own backend proxy server which powered by `express`. 
 
 ## Source Code File Structure
 ```
@@ -48,16 +59,9 @@ src
 └── serviceWorker.ts
 ```
 
-## 啟動步驟
+## Roadmap
+  - [ ] UI/UX (More Features)
+  - [ ] Increase Unit Test Coverage
+  - [ ] CICD Pipeline
 
-### `npm install`
-
-從 package.json 安裝所需的 dependencies
-
-### `npm start`
-
-啟動 Dcard Reader on localhost:3000
-
-Netlify URL: [https://dcard-reader.netlify.com/](https://dcard-reader.netlify.com/)
-
-![](https://i.imgur.com/5v2PPur.png)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fkylemocode%2Fdcard-reader?ref=badge_large)
