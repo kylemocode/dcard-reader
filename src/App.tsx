@@ -103,13 +103,8 @@ const App: React.FC = () => {
       <PostModal isOpen={isModalOpen} onRequestClose={handleModalClose} postId={modalPostId} /></> : (
         <div style={{marginTop: '40px'}}>
           <LoadingPlaceHolder />
-          <LoadingPlaceHolder />
-          <LoadingPlaceHolder />
-          <LoadingPlaceHolder />
-          <LoadingPlaceHolder />
         </div>
       )}
-      
     </PostsContainer>
   );
 }
